@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h3>Урок 6 Components</h3>
+    <div id="app6">
+        <app6-car></app6-car>
+        <app6-local-car></app6-local-car>
+    </div>
+
+
+    <h3>Урок 5 Фильтры</h3>
+    <div id="app5">
+        <button @click="show = !show">Скрыть / Показать</button>
+        <p v-if="show">Текст, который может стать невидимым <i>Убрать из DOM</i></p>
+        <p v-else>{{ message | lowercase | capatilize}}</p>
+        <ul>
+            <li v-for="(car, i) in cars">{{ i + 1 }} - {{ car.model }}</li>
+        </ul>
+    </div>
+    <hr>
+    <h3>Урок 4 Циклы, Условия, работа со списками данных</h3>
+    <div id="app4">
+        <button @click="show = !show">Скрыть / Показать</button>
+        <p v-if="show">Текст, который может стать невидимым <i>Убрать из DOM</i></p>
+        <p v-else>Текст 2</p>
+        <p v-show="show">Текст, который может стать невидимым <i>Скрыть из DOM</i></p>
+
+        <ul>
+            <li v-for="(car, i) in cars">{{ i + 1 }} - {{ car.model }}</li>
+        </ul>
+    </div><hr>
+
+    <h3>Урок 3 Обработанные свойства, реактивное поведение</h3>
+    <div id="app3">
+        <input type="text" @input="increment ($event.target.value)">
+        <p>{{ value }}</p>
+        <p>{{ doubleValue }}</p>
+    </div><hr>
+
+
+    <h3>Первые уроки, Как хранятся данные и как их отображать, отлов событий и методы, template syntax</h3>
+    <div id="app">
+        <span @mouseover="changeText">Текст</span>
+        <p>{{ title }}</p>
+        <p :class="styleCSS">Цвет: {{ styleCSS }}</p>
+        <input type="text" @input="styleCSS = $event.target.value">
+    </div><hr>
+    <script src="js/main.js"></script>
+</body>
+</html>
